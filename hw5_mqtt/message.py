@@ -94,7 +94,7 @@ while True:
 
     mesg = line.decode()
     mqttc.publish(topic, mesg)
-    print(mesg)
+    print('Sent:' , mesg)
     time.sleep(1)
     # s.write(fan.encode())
     # line = s.read(20)
