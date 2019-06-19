@@ -7,7 +7,7 @@
             ".bss": 38, 
             ".data": 4, 
             ".bss-delta": 0, 
-            ".text": 165
+            ".text": 166
         }
     }, 
     {
@@ -80,11 +80,11 @@
         "module": "main.o", 
         "size": {
             ".data-delta": 0, 
-            ".text-delta": -64, 
-            ".bss": 336, 
+            ".text-delta": 0, 
+            ".bss": 440, 
             ".data": 0, 
             ".bss-delta": 0, 
-            ".text": 899
+            ".text": 1010
         }
     }, 
     {
@@ -166,10 +166,10 @@
     }, 
     {
         "summary": {
-            "static_ram": 10600, 
-            "total_flash_delta": -64, 
+            "static_ram": 10704, 
+            "total_flash_delta": 0, 
             "static_ram_delta": 0, 
-            "total_flash": 80310
+            "total_flash": 80422
         }
     }
 ]

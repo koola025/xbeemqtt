@@ -11,6 +11,7 @@ Ticker servo_ticker;
 Ticker encoder_ticker;
 DigitalIn pin3(D3);
 Serial pc(USBTX, USBRX);
+Serial xbee(D12, D11);
 
 BBCar car(pin8, pin9, servo_ticker);
 
@@ -41,11 +42,26 @@ int main() {
         car.goStraight(60);
         while(encoder0.get_cm()<100) 
         {
-              pc.printf("%f\n", encoder0.get_cm());
+            char buff[12];
+            double num = encoder0.get_cm();
+            pc.printf("%f\n", num);
+            sprintf(buff, "%f", num);
+            buff[8] = '0';
+            buff[9] = '0';
+            buff[10] = '0';
+            buff[11] = '/0';
+
+
+            xbee.printf("%s\n", buff);
+            // xbee.printf("and: %c\n", buff[10]);
+
             wait(1);
             
         }
+        encoder0.reset();
         car.stop();
+
+
     }
    
 
